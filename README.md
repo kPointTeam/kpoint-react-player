@@ -49,3 +49,7 @@ function onkPointPlayerReady(player) {
 }
 ```
 
+### License
+
+React is [MIT licensed](./LICENSE).
+
