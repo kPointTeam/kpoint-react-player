@@ -1,7 +1,7 @@
 import React from 'react';
 const KpointPlayer = (props) => {
     const script = document.createElement('script');
-    script.src = "https://assets.zencite.com/orca/media/embed/player-silk.js";
+    script.src = "https://assets.kpoint.com/orca/media/embed/player-silk.js";
     script.async = true;
     document.body.appendChild(script);
 

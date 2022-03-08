@@ -1,5 +1,7 @@
 # kpoint-react-player
 A React component for embeding video in kpoint player.
+
+
 ### Usage
 ```bash
 npm install kpoint-react-player

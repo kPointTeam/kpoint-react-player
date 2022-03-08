@@ -13,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const KpointPlayer = props => {
   const script = document.createElement('script');
-  script.src = "https://assets.zencite.com/orca/media/embed/player-silk.js";
+  script.src = "https://assets.kpoint.com/orca/media/embed/player-silk.js";
   script.async = true;
   document.body.appendChild(script);
   const playerStyle = {
