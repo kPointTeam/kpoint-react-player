@@ -67,7 +67,7 @@ Method | Description
 `setVolume` | Set volume level to specified, input should be between 0 and 1.
 
 ## Example of how to use callback props and Instance methods to control the player
-```
+```jsx
 import React, { useRef } from "react";
 import { KpointPlayer } from "kpoint-react-player";
 
