@@ -8,24 +8,25 @@ npm install kpoint-react-player
 ```   
 
 ```jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {KpointPlayer} from 'kpoint-react-player'
+import React from "react";
+import ReactDOM from "react-dom";
+import { KpointPlayer } from "kpoint-react-player";
 
 ReactDOM.render(
   <React.StrictMode>
-    <KpointPlayer domain="ktpl.kpoint.com"
-    videoId="gcc-d9e8dbc3-5dfa-4f68-bf7a-97f25fb7632c"
-    height="360px"
-    width="640px"
-    offset="50000"
-    hide="search, toc, logo"
+    <KpointPlayer
+      domain="ktpl.kpoint.com"
+      videoId="gcc-d9e8dbc3-5dfa-4f68-bf7a-97f25fb7632c"
+      height="360px"
+      width="640px"
+      playerParams='{
+                    "search": false,
+                    "like": false
+                  }'
     />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
-
 ```
 
 
@@ -37,9 +38,36 @@ Prop | Description | Default
 `vidoeId` | Id of the video to load. | `""`
 `width` | Set the width of the player | `640px`
 `height` | Set the height of the player | `360px`
-`offset` | Start offset in milliseconds to start the video from
-`hide` | You can choose to hide a certain player controls based on the use case. Here is a list of supported controls which can be hidden. | `{}`
-`resume` | Do not show options to resume video from last position | `false`
+`playerParams` | Set the player parameters | `{}`
+`widgetsConfig` | Set the widgets configuration | `{}`
+## Callback props
+
+Callback props take a function that gets fired on various player events:
+
+Prop | Description
+---- | -----------
+`onLoad` | Called when media is loaded and ready to play.
+`onError` | Called when an error occurs whilst attempting to play media
+`onStateChange` | Called when playback state updates (-1: Not started yet, 0: Playback Over, 1:	Playing, 2:	Paused, 3: Buffering, 5: Replay)
+`onTimeupdate` | called when playback time updates
+
+## Instance Methods
+Use ref to call instance methods on the player. 
+
+
+
+Method | Description
+---- | -----------
+`getId` | Returns the video player id
+`getInfo` | Returns the video player info
+`playVideo` | Plays video from current position. or if video has not started, starts video from beginning.
+`pauseVideo` | Pauses video at the current position.
+`replayVideo` | Replays video from the beginning.
+`getCurrentTime` |Returns current video position in milliseconds.
+`getDuration` | Returns the duration of the video in milliseconds.
+`getVolume ` | Returns current volume level in the range 0 to 1 - 0 is considered muted and 1 as full volume.
+`seekTo` | Jumps to specific point in video. Time argument in specified in milliseconds.
+`setVolume` | Set volume level to specified, input should be between 0 and 1.
 
 ## Events
 If you wish you access the player object to control it programatically, include a onkPointPlayerReady method in page or Javascript. This method will be called and it will be passed the player when it is created and ready to be used.
@@ -51,7 +79,7 @@ function onkPointPlayerReady(player) {
 }
 ```
 
-### License
+## License
 
 React is [MIT licensed](./LICENSE).
 
