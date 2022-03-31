@@ -36,7 +36,7 @@ const KpointPlayer = forwardRef((props, ref) => {
     getCurrentTime() {
       return kPlayer.getCurrentTime();
     },
-    getDurantion() {
+    getDuration() {
       return kPlayer.getDuration();
     },
     getVolume() {

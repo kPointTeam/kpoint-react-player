@@ -15,18 +15,19 @@ function App() {
     console.log("onError: " + evt.data);
     console.log(evt);
   }
-  function onStart() {
-    console.log("Video started");
-  }
   function onload() {
     console.log("Video loaded");
-  }
-  function onPause() {
-    console.log("Video paused");
   }
   const playerRef = useRef();
   return (
     <>
+      <button
+        onClick={() => {
+          console.log(playerRef.current.getDuration());
+        }}
+      >
+        Get Video Duration
+      </button>
       <KpointPlayer
         ref={playerRef}
         domain="ktpl.kpoint.com"
@@ -37,7 +38,6 @@ function App() {
         onStateChange={onStateChange}
         onTimeupdate={onTimeupdate}
         onload={onload}
-        onPause={onPause}
         onError={onError}
       />
     </>
