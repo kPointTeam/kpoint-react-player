@@ -5,15 +5,11 @@ function App() {
   function onTimeupdate(timeMs) {
     console.log("Time update, new time: " + parseFloat(timeMs).toFixed(2));
   }
-
   function onStateChange(evt) {
     console.log("onStateChange: " + evt.data);
-    console.log(evt);
-    console.log(playerRef);
   }
   function onError(evt) {
     console.log("onError: " + evt.data);
-    console.log(evt);
   }
   function onload() {
     console.log("Video loaded");
